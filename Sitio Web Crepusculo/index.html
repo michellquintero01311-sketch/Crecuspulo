@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Twilight Website</title>
+<style>
+*{ 
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.15);
+}
+.title-box{
+    position:absolute;
+    left:55px;
+    bottom:38px;
+    z-index:10;
+
+    background:#0d3537;
+    padding:22px 45px;
+
+    border-radius:40px;
+
+    display:flex;
+    align-items:center;
+    gap:55px;
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,.25);
+}
+.title-box h1{
+    font-family: 'twilight New Moon';
+       src: url('twilight New Moon-Regular.ttf') format('truetype');
+       font-weight: 300;
+       font-style: normal;
+    color:white;
+    font-size:5rem;
+    font-weight:300;
+    line-height:1;
+    letter-spacing:0px;
+}
+</style>
+</head>
+<body> 
+<section class="hero">
+
+    <div class="title-box">
+        <h1>Twilight</h1>
+        <h1>Website</h1>
+    </div>
+<img src="respaldo/img/crepuculo.jpe" style="height: 590px;" width="1260px">
+</section>
+</body>
+</html>
+
+<a href="Menú.html"></a>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú Desplegable</title>
+ 
+  <style>
+    @font-face {
+      font-family: 'twilight new moon';
+      src: url('twilight new moon_2.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+ 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+ 
+    body {
+      background-color: #0d2b2a;
+      font-family: Calibri, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+    }
+ 
+    .menu-btn {
+      position: fixed;
+      top: 35px;
+      right: 45px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      padding: 10px;
+      z-index: 100;
+    }
+ 
+    .menu-line {
+      width: 45px;
+      height: 4px;
+      background-color: #ffffff;
+      border-radius: 50% / 50%;
+    }
+ 
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(4, 25, 23, 0.92);
+      backdrop-filter: blur(8px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+ 
+    .menu-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+ 
+    .menu-title {
+      font-family: 'twilight new moon', serif;
+      font-size: 3.2rem;
+      color: #ffffff;
+      letter-spacing: 4px;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+    }
+ 
+    .menu-items {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      max-width: 320px;
+    }
+    .menu-item {
+      text-decoration: none;
+      text-align: center;
+      padding: 12px 20px;
+      border-radius: 30px;
+      border: 1.5px solid #ffffff;
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: bold;
+      transition: all 0.2s ease;
+      background: transparent;
+      display: block;
+    }
+ 
+    .menu-item.active, .menu-item:hover {
+      background-color: #ffffff;
+      color: #4a0e17;
+    }
+ 
+    .close-btn {
+      margin-top: 25px;
+      font-size: 2.2rem;
+      color: #ffffff;
+      cursor: pointer;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+ 
+  <div class="menu-btn" id="openMenu">
+    <div class="menu-line"></div>
+    <div class="menu-line"></div>
+    <div class="menu-line"></div>
+  </div>
+ 
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-title">MENÚ</div>
+    <div class="menu-items">
+      <a href="" class="menu-item active">inicio</a>
+      <a href="#" class="menu-item">Presentación</a>
+      <a href="#" class="menu-item">Personajes</a>
+      <a href="#" class="menu-item">Autora</a>
+      <a href="#" class="menu-item">Peliculas</a>
+      <a href="#" class="menu-item">Libros</a>
+      <a href="datos curiosos" class="menu-item">Datos curiosos</a>
+    </div>
+    <div class="close-btn" id="closeMenu">✕</div>
+  </div>
+ 
+  <script>
+    const openMenu = document.getElementById('openMenu');
+    const closeMenu = document.getElementById('closeMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+ 
+    openMenu.addEventListener('click', () => {
+      menuOverlay.classList.add('active');
+    });
+ 
+    closeMenu.addEventListener('click', () => {
+      menuOverlay.classList.remove('active');
+    });
+  </script>
+ 
+</body>
+</html>
